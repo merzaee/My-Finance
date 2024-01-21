@@ -32,7 +32,7 @@ public class About extends AppCompatActivity implements View.OnClickListener{
         developer.setText(R.string.mmm);
         email.setText(R.string.developer_email);
         organization.setText(R.string.ku_csf);
-        phone.setText(R.string.devloper_phone);
+        phone.setText(R.string.developer_phone);
 
         avoid_keyboard();
         developer.setOnClickListener(this);

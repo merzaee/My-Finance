@@ -61,6 +61,7 @@
                 android:text="@string/organization"
                 android:inputType="none"
                 android:textSize="20sp"
+                android:hint="@string/organization"
                 tools:ignore="LabelFor" />
 
             <TextView
@@ -77,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:linksClickable="true"
                 android:paddingHorizontal="10dp"
+                android:hint="@string/app_developer"
                 android:text="@string/app_developer"
                 android:textSize="20sp" />
 
@@ -87,6 +89,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingHorizontal="10dp"
                 android:text="@string/email"
+                android:hint="@string/developer_email"
                 android:textSize="20sp" />
 
             <EditText
@@ -96,6 +99,7 @@
                 android:linksClickable="true"
                 android:paddingHorizontal="10dp"
                 android:text="@string/email"
+                android:hint="@string/email"
                 android:textSize="20sp" />
 
             <TextView
@@ -114,6 +118,7 @@
                 android:linksClickable="true"
                 android:paddingHorizontal="10dp"
                 android:text="@string/phone_no"
+                android:hint="@string/developer_phone"
                 android:textSize="20sp" />
 
         </LinearLayout>
