@@ -25,6 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="10dp"
+                android:hint="@string/full_name"
                 android:background="@drawable/my_edit_text"
                 android:minHeight="50dp" />
 
@@ -40,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="10dp"
+                android:hint="@string/payment_id"
                 android:background="@drawable/my_edit_text"
                 android:minHeight="50dp" />
 
@@ -56,6 +58,7 @@
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="10dp"
                 android:inputType="number"
+                android:hint="@string/amount"
                 android:background="@drawable/my_edit_text"
                 android:minHeight="50dp" />
 
@@ -72,6 +75,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/my_edit_text"
                 android:minHeight="50dp"
+                android:hint="@string/note"
                 android:paddingHorizontal="10dp"
                 android:minLines="5" />
 
@@ -87,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:paddingHorizontal="10dp"
+                android:hint="@string/date"
                 android:background="@drawable/my_edit_text"
                 android:minHeight="50dp" />
 

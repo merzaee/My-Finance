@@ -24,6 +24,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/my_edit_text"
             android:minHeight="50dp"
+            android:hint="@string/full_name"
             android:paddingHorizontal="10dp" />
 
         <TextView
@@ -39,6 +40,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/my_edit_text"
             android:minHeight="50dp"
+            android:hint="@string/list_id"
             android:paddingHorizontal="10dp" />
 
         <TextView
@@ -52,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:hint="@string/amount"
             android:background="@drawable/my_edit_text"
             android:inputType="number"
             android:minHeight="50dp"
@@ -70,6 +73,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/my_edit_text"
             android:minHeight="50dp"
+            android:hint="@string/list_title"
             android:paddingHorizontal="10dp" />
 
         <TextView
@@ -86,6 +90,7 @@
             android:background="@drawable/my_edit_text"
             android:minHeight="50dp"
             android:minLines="5"
+            android:hint="@string/note"
             android:paddingHorizontal="10dp" />
 
         <TextView
@@ -101,6 +106,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/my_edit_text"
             android:minHeight="50dp"
+            android:hint="@string/date"
             android:paddingHorizontal="10dp" />
 
         <LinearLayout

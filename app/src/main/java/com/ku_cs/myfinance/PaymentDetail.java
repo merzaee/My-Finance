@@ -40,7 +40,7 @@ public class PaymentDetail extends AppCompatActivity implements View.OnClickList
     private void initiateViews() {
         title = getString(R.string.payment_detail);
         Intent intent = getIntent();
-        if (!intent.getStringExtra("c_name").isEmpty()) {
+        if (!Objects.requireNonNull(intent.getStringExtra("c_name")).isEmpty()) {
             title = title + ": " + intent.getStringExtra("c_name");
             p_id = Integer.parseInt(Objects.requireNonNull(intent.getStringExtra("p_id")));
             c_name = intent.getStringExtra("c_name");

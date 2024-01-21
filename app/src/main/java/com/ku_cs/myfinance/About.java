@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -31,9 +30,9 @@ public class About extends AppCompatActivity implements View.OnClickListener{
 
         version.setText(version.getText().toString().concat(": 1.0" ));
         developer.setText(R.string.mmm);
-        email.setText("mjmerzaee@gmail.com");
+        email.setText(R.string.developer_email);
         organization.setText(R.string.ku_csf);
-        phone.setText("+93796175647");
+        phone.setText(R.string.devloper_phone);
 
         avoid_keyboard();
         developer.setOnClickListener(this);

@@ -10,14 +10,17 @@
     <string name="enter_full_name">اسم و تخلص را وارد کنید</string>
     <string name="full_name">اسم و تخلص</string>
     <string name="enter_phone">شماره تماس را وارد کنید</string>
+    <string name="mobile_example">Ex: 0700000000</string>
     <string name="enter_address">آدرس را وارد کنید</string>
     <string name="address">آدرس</string>
     <string name="save">ثبت</string>
+    <string name="serial_no">#</string>
     <string name="remaining">باقی مانده</string>
     <string name="no_data">اطلاعات پیدا نشد</string>
     <string name="addList">افزودن لیست جدید</string>
     <string name="select_contact">مخاطب را انتخاب کنید</string>
     <string name="enter_amount">مبلغ را وارد کنید</string>
+    <string name="afgs_example">1000 Afs</string>
     <string name="select_type">نوعیت را انتخاب کنید</string>
     <string name="note">یادداشت</string>
     <string name="enter_date">تاریخ را وارد کنید</string>
@@ -67,4 +70,6 @@
     <string name="organization">سازمان</string>
     <string name="mmm">محمد جواد میرزایی</string>
     <string name="ku_csf">دانشگاه کابل - دانشکده کمپیوتر ساینس</string>
+    <string name="developer_email">mjmerzaee@gmail.com</string>
+    <string name="devloper_phone">+93796175647</string>
 </resources>
