@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/contacts"
+        android:id="@+id/mnu_contacts" />
+
+    <item
+        android:title="@string/list"
+        android:id="@+id/mnu_lists" />
+
+    <item
+        android:title="@string/payments"
+        android:id="@+id/mnu_payments" />
+
+    <item
+        android:title="@string/password"
+        android:id="@+id/mnu_password" />
+
+    <item
+        android:title="@string/about"
+        android:id="@+id/mnu_about"/>
+</menu>

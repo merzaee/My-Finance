@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:layoutDirection="ltr"
+    android:orientation="vertical"
+    tools:context=".AddList">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/select_contact" />
+
+            <Spinner
+                android:id="@+id/sp_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="50dp"
+                android:inputType="text"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/my_edit_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/enter_amount" />
+
+            <EditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/afgs_example"
+                android:layout_marginTop="10dp"
+                android:inputType="number"
+                android:minHeight="50dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/my_edit_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/list_title" />
+
+            <EditText
+                android:id="@+id/et_list_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="50dp"
+                android:hint="@string/list_title"
+                android:autofillHints="title"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/my_edit_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/note" />
+
+            <EditText
+                android:id="@+id/et_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/note"
+                android:minLines="5"
+                android:layout_marginTop="10dp"
+                android:minHeight="50dp"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/my_edit_text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingHorizontal="10dp"
+                android:text="@string/enter_date"/>
+
+            <EditText
+                android:id="@+id/et_al_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:minHeight="50dp"
+                android:hint="@string/date"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/my_edit_text"
+                android:inputType="datetime"
+                android:autofillHints="none"/>
+
+            <Button
+                android:id="@+id/btn_save_list"
+                android:layout_width="150dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/save" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

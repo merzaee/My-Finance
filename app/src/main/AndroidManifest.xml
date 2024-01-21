@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/icmf2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icmf2_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyFinance"
+        tools:targetApi="31">
+        <activity
+            android:name=".Contacts"
+            android:exported="false" />
+        <activity
+            android:name=".UpdatePassword"
+            android:exported="false"
+            android:parentActivityName=".Contacts"/>
+        <activity
+            android:name=".PaymentDetail"
+            android:exported="false" />
+        <activity
+            android:name=".AddPayment"
+            android:exported="false"
+            android:parentActivityName=".Payments" />
+        <activity
+            android:name=".ListsDetail"
+            android:exported="false"
+            android:parentActivityName=".Lists" />
+        <activity
+            android:name=".ContactDetails"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+        <activity
+            android:name=".AddList"
+            android:exported="false"
+            android:parentActivityName=".Lists" />
+        <activity
+            android:name=".AddContact"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+        <activity
+            android:name=".Payments"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+        <activity
+            android:name=".About"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+        <activity
+            android:name=".SetPassword"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+        <activity
+            android:name=".Lists"
+            android:exported="false"
+            android:parentActivityName=".Contacts" />
+
+        <activity
+            android:name=".LoginPage"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
