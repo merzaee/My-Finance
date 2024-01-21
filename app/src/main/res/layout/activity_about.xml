@@ -62,7 +62,8 @@
                 android:inputType="none"
                 android:textSize="20sp"
                 android:hint="@string/organization"
-                tools:ignore="LabelFor" />
+                tools:ignore="LabelFor"
+                android:importantForAutofill="no" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,7 +81,9 @@
                 android:paddingHorizontal="10dp"
                 android:hint="@string/app_developer"
                 android:text="@string/app_developer"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
 
             <TextView
@@ -100,7 +103,9 @@
                 android:paddingHorizontal="10dp"
                 android:text="@string/email"
                 android:hint="@string/email"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:importantForAutofill="no"
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -119,7 +124,9 @@
                 android:paddingHorizontal="10dp"
                 android:text="@string/phone_no"
                 android:hint="@string/developer_phone"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:inputType="phone"
+                android:importantForAutofill="no" />
 
         </LinearLayout>
     </ScrollView>
