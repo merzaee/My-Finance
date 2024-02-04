@@ -1,7 +1,5 @@
 package com.ku_cs.myfinance;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
@@ -25,12 +23,9 @@ public class Lists extends AppCompatActivity implements View.OnClickListener{
 
     ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode()==200){
-                        recreate();
-                    }
+            result -> {
+                if (result.getResultCode()==200){
+                    recreate();
                 }
             }
     );

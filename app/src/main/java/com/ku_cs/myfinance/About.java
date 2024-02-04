@@ -32,7 +32,7 @@ public class About extends AppCompatActivity implements View.OnClickListener {
         organization = findViewById(R.id.et_a_organization);
         phone = findViewById(R.id.et_a_phone);
         //get the application version and show on version edittext
-        String app_version = "1.5";
+        String app_version;
         try {
              app_version = context.getPackageManager().getPackageInfo(context.getPackageName(),0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
