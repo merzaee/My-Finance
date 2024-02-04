@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">My Finance</string>
     <string name="my_finance">My Finance</string>
     <string name="contacts">Contacts</string>
     <string name="list">Lists</string>
@@ -9,17 +10,17 @@
     <string name="enter_full_name">Enter the full name</string>
     <string name="full_name">Full name</string>
     <string name="enter_phone">Enter mobile number</string>
-    <string name="mobile_example" translatable="false">Ex: 0700000000</string>
+    <string name="mobile_example">Ex: 0700000000</string>
     <string name="enter_address">Enter address</string>
     <string name="address">Address</string>
     <string name="save">Save</string>
-    <string name="serial_no" translatable="false">#</string>
-    <string name="remaining">Reminder</string>
+    <string name="serial_no">#</string>
+    <string name="remaining">Remainder</string>
     <string name="no_data">No data found</string>
     <string name="addList">Add new list</string>
     <string name="select_contact">Select contact</string>
     <string name="enter_amount">Enter the amount</string>
-    <string name="afgs_example" translatable="false">1000 Afs</string>
+    <string name="afgs_example">1000 Afs</string>
     <string name="select_type">"Select the type "</string>
     <string name="note">Note</string>
     <string name="enter_date">Enter the date</string>
@@ -33,7 +34,7 @@
     <string name="contact_id">Contact Id</string>
     <string name="phone_no">Phone No</string>
     <string name="total_reminder">Total Reminder</string>
-    <string name="contact_total_payment">Total Peyment</string>
+    <string name="contact_total_payment">Total Payment</string>
     <string name="total_listed">Total listed</string>
     <string name="delete">Delete</string>
     <string name="amount">Amount</string>
@@ -52,15 +53,15 @@
     <string name="payment_updated">Payment updated successfully</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
-    <string name="password_hint">Please enter the password</string>
+    <string name="password_hint">Please enter password</string>
     <string name="password_saved">Password saved successfully</string>
     <string name="password_isnt_the_same">Passwords are not the same</string>
-    <string name="password_hint1">Please enter your password accuretly. Password can\'t be empty</string>
-    <string name="old_password">Enter the old password</string>
+    <string name="password_hint1">Please enter your password accurately. Password can\'t be empty</string>
+    <string name="old_password">Enter the current password</string>
     <string name="login">Login</string>
     <string name="incorrect_password">Password is incorrect</string>
     <string name="password_didnt_updated">Password didn\'t updated, please tray again later</string>
-    <string name="password_length">Password length must be greather than 1</string>
+    <string name="password_length">Password length must be greater than 1</string>
     <string name="update_password">Update password</string>
     <string name="list_title">List title</string>
     <string name="app_version">Application version</string>
@@ -72,4 +73,22 @@
     <string name="developer_email">mjmerzaee@gmail.com</string>
     <string name="developer_phone">+93796175647</string>
     <string name="logo">Logo</string>
+    <string name="backup_db">Backup data</string>
+    <string name="unable_to_backup">Unable to create backup. Retry</string>
+    <string name="unable_to_create_directory">Unable to create directory. Retry</string>
+    <string name="backup_created">Backup created successfully</string>
+    <string name="backup">Backup</string>
+
+    <string name="restore">Restore</string>
+    <string name="start">Start</string>
+    <string name="choose_the_file">Please select the database file.</string>
+    <string name="contact_saved">Contact saved successfully</string>
+    <string name="will_be_deleted">will be deleted</string>
+    <string name="fill_accurately">Please fill all values accurately</string>
+    <string name="delete_contact">Delete contact?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_deleted">Contact deleted successfully</string>
+    <string name="contact_count">Contact counts</string>
+    <string name="summary">Summary</string>
 </resources>

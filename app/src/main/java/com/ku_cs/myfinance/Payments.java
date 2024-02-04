@@ -1,5 +1,9 @@
 package com.ku_cs.myfinance;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -27,6 +31,18 @@ public class Payments extends AppCompatActivity implements View.OnClickListener 
     DBHelper dbHelper;
     ArrayList<String> al_p_id, al_p_s_no, al_contact, al_amount;
     PaymentAdapter paymentAdapter;
+
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode()==300){
+                        recreate();
+                    }
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +116,7 @@ public class Payments extends AppCompatActivity implements View.OnClickListener 
             Intent intent = new Intent(this, AddPayment.class);
             intent.putExtra("c_id", "0");
             intent.putExtra("c_id", tv_c_id.getText().toString());
-            startActivity(intent);
+            activityResultLauncher.launch(intent);
         }
     }
 }

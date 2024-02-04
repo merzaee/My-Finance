@@ -95,7 +95,7 @@ public class ListsDetail extends AppCompatActivity implements View.OnClickListen
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton("Yes", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.yes), (dialog, which) -> {
             if (operation.equals("delete")) {
                 if (dbHelper.delete_list(l_id) != -1) {
                     Toast.makeText(this, getString(R.string.list) + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
@@ -110,7 +110,7 @@ public class ListsDetail extends AppCompatActivity implements View.OnClickListen
                 }
             }
         });
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton(getString(R.string.cancel), null);
         builder.show();
     }
 

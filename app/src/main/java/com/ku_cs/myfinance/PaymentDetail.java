@@ -96,7 +96,7 @@ public class PaymentDetail extends AppCompatActivity implements View.OnClickList
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(title);
         builder.setMessage(message);
-        builder.setPositiveButton("Yes", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.yes), (dialog, which) -> {
             if (operation.equals("delete")) {
                 if (dbHelper.delete_payment(p_id) != -1) {
                     Toast.makeText(this, getString(R.string.payments) + " " + getString(R.string.deleted), Toast.LENGTH_SHORT).show();
@@ -111,7 +111,7 @@ public class PaymentDetail extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton(getString(R.string.cancel), null);
         builder.show();
     }
 

@@ -30,7 +30,7 @@ public class ContactDetails extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contact_details);
-        title = "Contact Detail";
+        title = getString(R.string.contactDetail);
         initiateViews();
     }
 
@@ -46,7 +46,9 @@ public class ContactDetails extends AppCompatActivity implements View.OnClickLis
         c_phone = findViewById(R.id.ed_cd_phone);
         c_address = findViewById(R.id.ed_cd_address);
         total_listed = findViewById(R.id.ed_cd_total_listed);
+        total_listed.setOnClickListener(this);
         total_payment = findViewById(R.id.ed_cd_payments);
+        total_payment.setOnClickListener(this);
         total_reminder = findViewById(R.id.ed_cd_reminder);
         btn_delete = findViewById(R.id.btn_cd_delete);
         btn_delete.setOnClickListener(this);
@@ -90,26 +92,28 @@ public class ContactDetails extends AppCompatActivity implements View.OnClickLis
         if (v.getId() == R.id.btn_cd_delete) {
             list_count = dbHelper.get_lists_count_via_contact_id(c_id).getCount();
             payments_count = dbHelper.get_payments_count_via_contact_id(c_id).getCount();
-            confirm_delete(list_count + " lists and " + payments_count + " payments will be deleted");
-        } else if (v.getId() == R.id.btn_cd_lists) {
+            confirm_delete(list_count + " " + getString(R.string.list) + " & " + payments_count + " " + getString(R.string.payments) + " " + getString(R.string.will_be_deleted));
+        } else if (v.getId() == R.id.btn_cd_lists || v.getId() == R.id.ed_cd_total_listed) {
             Intent intent = new Intent(v.getContext(), Lists.class);
             intent.putExtra("c_id", c_id);
             intent.putExtra("c_name", c_name.getText().toString());
             v.getContext().startActivity(intent);
-        } else if (v.getId()==R.id.btn_cd_payments) {
+        } else if (v.getId()==R.id.btn_cd_payments || v.getId() == R.id.ed_cd_payments) {
             Intent intent = new Intent(v.getContext(), Payments.class);
             intent.putExtra("c_id", c_id);
             intent.putExtra("c_name", c_name.getText().toString());
             v.getContext().startActivity(intent);
         }
+        Intent result = new Intent();
+        setResult(100, result);
     }
 
     public void confirm_delete(String message) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete Contact?");
+        builder.setTitle(getString(R.string.delete_contact));
         builder.setMessage(message);
-        builder.setPositiveButton("Yes", (dialog, which) -> {
+        builder.setPositiveButton(getString(R.string.yes), (dialog, which) -> {
             if (list_count > 0) {
                 dbHelper.delete_lists_via_contact_id(c_id);
             }
@@ -117,13 +121,13 @@ public class ContactDetails extends AppCompatActivity implements View.OnClickLis
                 dbHelper.delete_payments_via_contact_id(c_id);
             }
             if (dbHelper.delete_contact(c_id) != -1) {
-                Toast.makeText(ContactDetails.this, " contact deleted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ContactDetails.this, getString(R.string.contact_deleted), Toast.LENGTH_SHORT).show();
                 finish();
             } else {
                 Toast.makeText(ContactDetails.this, "contact did not deleted", Toast.LENGTH_SHORT).show();
             }
         });
-        builder.setNegativeButton("Cancel", null);
+        builder.setNegativeButton(getString(R.string.cancel), null);
         builder.show();
     }
 
@@ -147,5 +151,13 @@ public class ContactDetails extends AppCompatActivity implements View.OnClickLis
         c_name.setShowSoftInputOnFocus(false);
         c_name.setFocusable(false);
         c_name.setInputType(InputType.TYPE_NULL);
+
+        c_phone.setShowSoftInputOnFocus(false);
+        c_phone.setFocusable(false);
+        c_phone.setInputType(InputType.TYPE_NULL);
+
+        c_address.setShowSoftInputOnFocus(false);
+        c_address.setFocusable(false);
+        c_address.setInputType(InputType.TYPE_NULL);
     }
 }

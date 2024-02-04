@@ -81,6 +81,8 @@ public class AddPayment extends AppCompatActivity implements View.OnClickListene
                 if (dbHelper.insertPayment(c_id, (Integer.parseInt(et_amount.getText().toString())),
                         et_date.getText().toString(), et_note.getText().toString()) > 0) {
                     Toast.makeText(this, R.string.payment_saved, Toast.LENGTH_SHORT).show();
+                    Intent result = new Intent();
+                    setResult(300, result);
                     finish();
                 }
             } else {

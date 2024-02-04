@@ -8,6 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,7 +61,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
         holder.c_name.setText(String.valueOf(al_c_name.get(position)));
         holder.c_money.setText(String.valueOf(al_c_money.get(position)));
         holder.c_phone.setText(String.valueOf(al_c_phone.get(position)));
-            //
+            //if the amount is more than 0, so we can show it in red color
         if (Double.parseDouble(al_c_money.get(position)) < 0){
             holder.c_money.setTextColor(Color.parseColor("#DA1623"));
         }
@@ -72,6 +76,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     @Override
     public int getItemCount() {
         return al_c_id.size();
+    }
+
+    public void clear(){
+        al_c_id.clear();
+        al_c_name.clear();
+        al_c_money.clear();
+        al_c_phone.clear();
+        al_c_s_no.clear();
+        notifyDataSetChanged();
     }
 
 }

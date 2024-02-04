@@ -1,5 +1,9 @@
 package com.ku_cs.myfinance;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +13,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +21,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class Lists extends AppCompatActivity {
+public class Lists extends AppCompatActivity implements View.OnClickListener{
+
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode()==200){
+                        recreate();
+                    }
+                }
+            }
+    );
+
 
     FloatingActionButton fl_add_list;
     DBHelper dbHelper;
@@ -33,7 +51,6 @@ public class Lists extends AppCompatActivity {
         setTitle(R.string.list);
 
         Intent intent = getIntent();
-        Intent i = new Intent(Lists.this, AddList.class);
         dbHelper = new DBHelper(this);
         list_rc = findViewById(R.id.lists_rc);
         al_amount = new ArrayList<>();
@@ -53,10 +70,8 @@ public class Lists extends AppCompatActivity {
         }
 
         fl_add_list = findViewById(R.id.fl_add_list);
-        fl_add_list.setOnClickListener(v -> {
-            i.putExtra("c_id", tv_c_id.getText().toString());
-            startActivity(i);
-        });
+        fl_add_list.setOnClickListener(this);
+
 
         display_lists();
         listsAdapter = new ListAdapter(Lists.this, al_l_id, al_contact, al_amount, al_title, al_l_s_no);
@@ -90,5 +105,12 @@ public class Lists extends AppCompatActivity {
                 counter++;
             }
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent i = new Intent(Lists.this, AddList.class);
+        i.putExtra("c_id", tv_c_id.getText().toString());
+        activityResultLauncher.launch(i);
     }
 }

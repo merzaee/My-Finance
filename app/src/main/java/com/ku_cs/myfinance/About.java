@@ -2,7 +2,10 @@ package com.ku_cs.myfinance;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -11,9 +14,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class About extends AppCompatActivity implements View.OnClickListener{
+public class About extends AppCompatActivity implements View.OnClickListener {
 
     TextView version;
+    Context context = this;
     EditText developer, email, organization, phone;
 
     @Override
@@ -27,8 +31,14 @@ public class About extends AppCompatActivity implements View.OnClickListener{
         email = findViewById(R.id.et_a_email);
         organization = findViewById(R.id.et_a_organization);
         phone = findViewById(R.id.et_a_phone);
-
-        version.setText(version.getText().toString().concat(": 1.0" ));
+        //get the application version and show on version edittext
+        String app_version = "1.5";
+        try {
+             app_version = context.getPackageManager().getPackageInfo(context.getPackageName(),0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        version.setText(version.getText().toString().concat(": ").concat(app_version));
         developer.setText(R.string.mmm);
         email.setText(R.string.developer_email);
         organization.setText(R.string.ku_csf);
@@ -65,13 +75,13 @@ public class About extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         Intent intent;
-        if (v.getId()==R.id.et_a_phone){
+        if (v.getId() == R.id.et_a_phone) {
             intent = new Intent(Intent.ACTION_DIAL);
             intent.setData(Uri.parse("tel:+93796175647"));
-        } else if (v.getId()==R.id.et_a_email) {
+        } else if (v.getId() == R.id.et_a_email) {
             Uri uri = Uri.parse("mailto:mjmerzaee@gmail.com");
             intent = new Intent(Intent.ACTION_SENDTO, uri);
-        }else{
+        } else {
             intent = new Intent(Intent.ACTION_VIEW);
             String uri = "https://www.linkedin.com/in/mjmerzaee";
             intent.setData(Uri.parse(uri));

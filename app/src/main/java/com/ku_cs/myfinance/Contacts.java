@@ -1,11 +1,13 @@
 package com.ku_cs.myfinance;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
@@ -28,6 +30,14 @@ public class Contacts extends AppCompatActivity {
     RecyclerView contacts_rc;
     ImageView noDataImg;
     TextView noData;
+    ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == 100) {
+                    recreate();
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +55,7 @@ public class Contacts extends AppCompatActivity {
         al_s_no = new ArrayList<>();
         noData = findViewById(R.id.tv_nodata);
         noDataImg = findViewById(R.id.nodataimage);
+
         display_contacts();
         contactsAdapter = new ContactsAdapter(Contacts.this, al_c_id, al_c_name, al_c_money, al_c_phone, al_s_no);
         contacts_rc.setAdapter(contactsAdapter);
@@ -52,7 +63,7 @@ public class Contacts extends AppCompatActivity {
 
         add_contact.setOnClickListener(v -> {
             Intent intent = new Intent(Contacts.this, AddContact.class);
-            startActivity(intent);
+            activityResultLauncher.launch(intent);
         });
 
     }
@@ -101,10 +112,13 @@ public class Contacts extends AppCompatActivity {
             intent = new Intent(Contacts.this, UpdatePassword.class);
         } else if (item_id == R.id.mnu_about) {
             intent = new Intent(Contacts.this, About.class);
+        } else if (item_id == R.id.mnu_summary) {
+            intent = new Intent(Contacts.this, Summary.class);
         } else {
             return false;
         }
         startActivity(intent);
         return true;
     }
+
 }

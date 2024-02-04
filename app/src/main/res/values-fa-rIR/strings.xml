@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="unable_to_backup">یک آپ ساخته نشد. دوباره تلاش کنید</string>
+    <string name="unable_to_create_directory">پوشه ساخته نشد. دوباره تلاش کنید</string>
+    <string name="backup_created">یک آپ ساخته شد.</string>
     <string name="app_name">حسابداری من</string>
     <string name="my_finance">حسابداری من</string>
     <string name="contacts">مخاطبین</string>
@@ -73,4 +76,18 @@
     <string name="developer_email">mjmerzaee@gmail.com</string>
     <string name="developer_phone">+93796175647</string>
     <string name="logo">Logo</string>
+    <string name="backup_db">تهیه فایل پشتیبان</string>
+    <string name="backup">بک آپ</string>
+    <string name="contact_saved">مخاطب موفقانه ثبت شد</string>
+    <string name="will_be_deleted">حذف خواهد شد</string>
+    <string name="restore">بازیابی</string>
+    <string name="start">شروع</string>
+    <string name="choose_the_file">فایل دیتابیس را انتخاب نمایید</string>
+    <string name="fill_accurately">لطفا همه موارد را با دقت پر کنید</string>
+    <string name="delete_contact">حذف مخاطب؟</string>
+    <string name="yes">تائید</string>
+    <string name="cancel">لغو</string>
+    <string name="contact_deleted">مخاطب موفقانه حذف شد</string>
+    <string name="contact_count">تعداد مخاطبین</string>
+    <string name="summary">خلاصه</string>
 </resources>

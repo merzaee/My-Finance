@@ -72,4 +72,22 @@
     <string name="developer_email">mjmerzaee@gmail.com</string>
     <string name="developer_phone">+93796175647</string>
     <string name="logo">Logo</string>
+    <string name="backup_db">Backup data</string>
+    <string name="unable_to_backup">Unable to create backup. Retry</string>
+    <string name="unable_to_create_directory">Unable to create directory. Retry</string>
+    <string name="backup_created">Backup created successfully</string>
+    <string name="backup">Backup</string>
+
+    <string name="restore">Restore</string>
+    <string name="start">Start</string>
+    <string name="choose_the_file">Please select the database file.</string>
+    <string name="contact_saved">Contact saved successfully</string>
+    <string name="will_be_deleted">will be deleted</string>
+    <string name="fill_accurately">Please fill all values accurately</string>
+    <string name="delete_contact">Delete contact?</string>
+    <string name="yes">Yes</string>
+    <string name="cancel">Cancel</string>
+    <string name="contact_deleted">Contact deleted successfully</string>
+    <string name="contact_count">Contact counts</string>
+    <string name="summary">Summary</string>
 </resources>

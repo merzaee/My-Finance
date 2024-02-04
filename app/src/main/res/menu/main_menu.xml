@@ -12,6 +12,9 @@
     <item
         android:title="@string/payments"
         android:id="@+id/mnu_payments" />
+    <item
+        android:title="@string/summary"
+        android:id="@+id/mnu_summary"/>
 
     <item
         android:title="@string/password"
@@ -20,4 +23,6 @@
     <item
         android:title="@string/about"
         android:id="@+id/mnu_about"/>
+
+
 </menu>

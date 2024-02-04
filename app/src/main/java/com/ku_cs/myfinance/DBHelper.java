@@ -5,19 +5,20 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import androidx.annotation.Nullable;
 
+import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     SQLiteDatabase db = this.getWritableDatabase();
+
 
     private static final String dbName = "my_finance.db";
     public static final int dbVersion = 2;
 
     public DBHelper(@Nullable Context context) {
         super(context, dbName, null, dbVersion);
-    }
 
+    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -81,7 +82,6 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM contacts_detail  ", null);
     }
 
-
     public Cursor get_lists_count_via_contact_id(int contact_id){
         return db.rawQuery("SELECT list.l_id FROM list WHERE list.c_id = " + contact_id, null);
     }
@@ -102,7 +102,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public long delete_list(int list_id) {
         return db.delete("list", "l_id=?", new String[]{String.valueOf(list_id)});
     }
-
     public long update_list(int list_id, int amount, String date, String title, String note){
         ContentValues cv = new ContentValues();
         cv.put("Amount", amount);
@@ -142,4 +141,14 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update("payment", cv,"p_id=?", new String[]{String.valueOf(payment_id)});
     }
 
+    public Cursor getLastContact(){
+        return db.rawQuery("SELECT max(contacts.c_id), contacts.name, contacts.phone, contacts.address FROM contacts", null);
+    }
+    public Cursor getTotalListed(){
+        return db.rawQuery("SELECT sum(list.Amount) FROM list", null);
+    }
+
+    public Cursor getTotalPayment(){
+        return db.rawQuery("SELECT sum(payment.Amount) FROM payment", null);
+    }
 }

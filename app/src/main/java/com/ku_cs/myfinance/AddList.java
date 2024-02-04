@@ -115,6 +115,8 @@ public class AddList extends AppCompatActivity implements View.OnClickListener {
                 if (dbHelper.insertList(c_id, (Integer.parseInt(amount.getText().toString())), title.getText().toString(),
                         list_date.getText().toString(), note.getText().toString()) > 0) {
                     Toast.makeText(this, R.string.list_saved, Toast.LENGTH_SHORT).show();
+                    Intent result_intent = new Intent();
+                    setResult(200, result_intent);
                     finish();
                 }
             } else {
