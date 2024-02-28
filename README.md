@@ -2,7 +2,7 @@ This is an app for personal accounting. You can use this app to manage your debt
 Students can create their own Android application by changing the codes.
 
 How to use this app?
-1- First download the installable file from this link https://github.com/merzaee/My-Finance/releases/download/android/My.Finance.apk 
+1- First download the installable file from this link https://github.com/merzaee/My-Finance/releases/download/android/My.Finance.1.6.2.apk  
 2- Then add new contact using + button
 3- click on one of contacts 
 4- the details page will apear
